@@ -1,0 +1,10 @@
+version: '3'
+services:
+  backend:
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    command: node src/app.js
+    ports:
+      - "3001:3001"

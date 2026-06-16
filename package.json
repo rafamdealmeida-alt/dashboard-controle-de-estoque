@@ -1,0 +1,9 @@
+{
+  "name": "wms-enterprise-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install --prefix backend",
+    "dev": "npm start --prefix backend"
+  }
+}
