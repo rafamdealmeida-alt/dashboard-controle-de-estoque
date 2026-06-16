@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "buildCommand": "npm install --prefix backend",
+  "buildCommand": "npm install && npm install --prefix api && npm install --prefix backend",
   "functions": {
     "api/**/*.js": {
       "memory": 1024,

@@ -5,13 +5,21 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get('/', (req, res) => res.send('WMS API OK'));
+let products = [];
 
-// Importar rotas
-const productsRouter = require('../backend/src/routes/products');
-app.use('/products', productsRouter);
+app.get('/', (req, res) => res.json({ message: 'WMS API OK' }));
 
-// Exportar para Vercel Serverless Functions
-module.exports = (req, res) => {
-  return app(req, res);
-};
+app.get('/products', (req, res) => {
+  res.json(products);
+});
+
+app.post('/products', (req, res) => {
+  if (req.body && req.body.name) {
+    products.push(req.body);
+  }
+  res.json({ ok: true, products });
+});
+
+module.exports = app;
+
+
