@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "framework": "nodejs",
   "buildCommand": "npm install --prefix backend",
   "functions": {
     "api/**/*.js": {
